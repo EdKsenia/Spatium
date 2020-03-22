@@ -1,0 +1,83 @@
+body {
+    background-image: url("../img/bg2.jpg") ;
+    
+	background-size: cover;
+    background-repeat: no-repeat;
+}
+#form_edit_profile h2 {
+    font-size: sans-serif;
+    margin:12% 25% 0 10%;
+    font-size: 40px;
+	color:#000000;
+}
+.main-section{
+    padding: 0;
+    background-color:rgba(188,180,203, .75);
+
+    padding: 0 18px;
+}
+#info{
+	font-size: 12px;
+}
+
+.row {
+	margin-left: 2%;
+}
+
+#info1{
+	margin-top:9%;
+	font-size: 16px;
+}
+
+#info{
+	margin-top:2%;
+	font-size: 16px;
+}
+
+
+
+.wrapper{
+	margin-left: 25px;
+	
+}
+
+.sidebar {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: auto;
+}
+
+.inner-sidebar {
+	width: 500px;
+    height: 500px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+#media{
+	font-size: 12px;
+}
+
+form{
+    margin-left: 30px;
+}
+
+input[type="text"]{
+
+    width:90% ;
+}
+
+input[type=submit] {
+    background:white;
+    width: 90%;
+    border: 1px solid #000000;
+
+}
+

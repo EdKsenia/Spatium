@@ -1,0 +1,35 @@
+video {
+    width: 70%;
+    max-height: 100%;
+}
+
+#mainvid img {
+    width: 30px;
+}
+
+.video_view {
+    width: 100%;
+}
+
+#rig {
+    margin: 0 0 0 auto;
+    /* или */
+    margin-left: auto;
+}
+#mini img{
+    width: 10%
+}
+
+.row_jumbotron{
+    margin-left:15%;
+    margin-right:15%;
+}
+
+.desc label{
+    font-style: italic;
+    font-weight: bold;
+}
+
+.horizontal div{
+    display:inline-block;
+}

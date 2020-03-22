@@ -1,0 +1,78 @@
+body {
+    background: url("../img/bg1.jpg" ) no-repeat center;
+
+	background-size: cover;
+    background-repeat: no-repeat;
+}
+#form_add_note h2 {
+    font-size: sans-serif;
+    margin:8% 25% 0 10%;
+    font-size: 40px;
+	color:#000000;
+}
+.main-section{
+    padding: 0;
+    background-color:rgba(188,180,203, .75);
+
+    padding: 0 18px;
+}
+#media{
+	font-size: 12px;
+}
+
+.row {
+	margin-left: 10px;
+}
+
+#title{
+	margin-top:4%;
+}
+
+#description{
+	margin-top:2%;
+}
+
+#add_v, #add_p{
+	margin-top:2%;
+}
+
+input[type="text"]{
+	
+	width:90% ;
+}
+
+input[type=submit] {
+	background:white;
+	width: 90%;
+	border: 1px solid #000000;
+
+}
+
+form {
+    padding: 0 18px;
+}
+.sidebar {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: auto;
+}
+
+.inner-sidebar {
+	width: 500px;
+    height: 500px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+#addNote{
+    margin-left: 20px;
+}
+
+
+

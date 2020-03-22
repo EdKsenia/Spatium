@@ -1,0 +1,104 @@
+body{
+    background: url("../img/moon.jpg" ) no-repeat center center fixed moccasin;
+
+    /*background-size: cover;*/
+    /*background-color:rgba(90, 90, 122, .55);*/
+}
+
+
+input [type="text"]{
+    height: 70px;
+}
+.col-md-12 {
+    background-color:rgba(199, 188, 230, .65);
+}
+.nav #choice, #query{
+    display:inline-block;
+}
+.sidebar h3{
+    text-align: center;
+}
+
+.form-control {
+    height: 40px;
+    width: 600px;
+
+}
+.btn {
+    height: 40px;
+    background-color: #c7beff;
+}
+.btn:hover{
+    background-color: #5a5a7a;
+}
+.inner-sidebar {
+    margin-left: 0;
+    /*background-color: rgba(255, 239, 213, .5);*/
+}
+
+#info{
+    font-size: 12px;
+}
+#info1{
+    margin-top:9%;
+    font-size: 16px;
+}
+
+#info{
+    margin-top:2%;
+    font-size: 16px;
+}
+
+.row #date{
+    font-size: 18px;
+}
+.container-fluid #content{
+    margin-top: 15%;
+}
+
+
+.wrapper{
+    margin-left: 25px;
+
+}
+
+.sidebar {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 8%;
+    left: 0;
+    /*overflow: auto;*/
+}
+
+
+
+#media2{
+    font-size: 19px;
+    font-weight: normal;
+    font-style: italic;
+}
+.lead img{
+    width: 500px;
+}
+.videoView{
+
+}
+.inner-sidebar img{
+    width: 600px;
+}
+
+
+.container-fluid{
+    padding-left: 0;
+}
+
+/*.row{
+    margin-left: 20px;
+}*/
+.title button{
+    font-weight: bolder;
+    font-size: 20px;
+    border-style:none;
+    background-color: #FFFFFF;
+}
