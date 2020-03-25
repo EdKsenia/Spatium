@@ -41,9 +41,10 @@
                         <input type="text" name="about" placeholder="About*" required="required"><br>
                     </div>
                     <hr>
-<#--                    <div class="row" id="media">-->
+                    <div class="row" id="media">
+                        <#include "file_upload.ftlh">
 <#--                        <input type="file" name="img"/>-->
-<#--                    </div>-->
+                    </div>
                     <br>
                     <div class="row" id="submit">
                         <input type="submit" name="saveChannel" value="Save">

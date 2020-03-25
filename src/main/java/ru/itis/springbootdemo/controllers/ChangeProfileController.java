@@ -9,7 +9,7 @@ import ru.itis.springbootdemo.security.UserDetailsImpl;
 @Controller
 public class ChangeProfileController {
     @GetMapping("/changeProfile")
-    public String getWelcome(Authentication authentication, Model model) {
+    public String getChangeProfile(Authentication authentication, Model model) {
         UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
         model.addAttribute("user", userDetails.getUser());
         return "changeProfile";

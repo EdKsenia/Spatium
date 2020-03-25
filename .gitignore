@@ -4,6 +4,8 @@ target/
 !**/src/main/**
 !**/src/test/**
 
+.mp4
+
 ### STS ###
 .apt_generated
 .classpath

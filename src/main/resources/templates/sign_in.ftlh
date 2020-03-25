@@ -34,7 +34,7 @@
                        required="required"><br>
 <#--            </div>-->
         </div>
-        <div class="check"><p><input type="checkbox" name="remember" value=""> Remember me</p></div>
+        <div class="check"><p><input type="checkbox" name="remember-me"> Remember me</p></div>
         <div class="buttonLogin">
                 <input type="submit" name="login" value="Login">
         </div>

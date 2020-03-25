@@ -52,11 +52,12 @@
                                   value="${user.about}"></textarea><br>
                     </div>
                     <hr>
-<#--                    <div class="row" id="media">-->
-<#--                        Change photo-->
+                    <div class="row" id="media">
+                        Change photo
+                        <#include "file_upload.ftlh">
 <#--                        <input type="file" name="fileP" value="${img}" required="required">-->
-<#--                    </div>-->
-<#--                    <br>-->
+                    </div>
+                    <br>
                     <div class="row" id="submit">
                         <input type="submit" name="saveNote" value="Save">
                     </div>

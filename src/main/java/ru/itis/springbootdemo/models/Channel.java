@@ -18,7 +18,10 @@ public class Channel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Long owned;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
     private String name;
     private String about;
     private String img;

@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class AddNoteController {
     @GetMapping("/addNote")
-    public String getWelcome() {
+    public String getAddNotePage() {
         return "addNote";
     }
 }

@@ -6,6 +6,7 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
@@ -34,8 +35,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/note").authenticated()
                 .antMatchers("/welcome").permitAll()
                 .antMatchers("/help").permitAll()
-                .antMatchers("/mainy").permitAll()
+                .antMatchers("/main").permitAll()
                 .antMatchers("/signUp").permitAll()
+                .antMatchers("/files").permitAll()
                 .antMatchers("/confirm/**").permitAll();
 
         http.formLogin()
@@ -44,6 +46,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .failureUrl("/signIn?error")
                 .usernameParameter("email")
                 .permitAll();
+        http.logout()
+                .logoutSuccessUrl("/logout")
+                .deleteCookies("JSESSIONID");
+        http.sessionManagement()
+                .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED);
+        http.rememberMe().key("uniqueAndSecret");
+
 
 
     }
