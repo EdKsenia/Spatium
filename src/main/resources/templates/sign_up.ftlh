@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+<#import "spring.ftl" as spring />
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -16,12 +17,12 @@
 </head>
 <body>
 <div class="sign_up">
-    <h1>Register</h1>
+    <h1><@spring.message 'register.page'/></h1>
     <div>
         <form action="/signUp" method="post">
             <div class="form-group row">
 <#--                <div class="col-sm-7">-->
-                    <input type="text" name="name" class="form-control" placeholder="Enter your name"
+                    <input type="text" name="name" class="form-control" placeholder="<@spring.message 'register.page.name'/>"
                            required="required"
                            autofocus>
 <#--                </div>-->
@@ -34,32 +35,32 @@
             </div>
             <div class="form-group row">
 <#--                <div class="col-sm-7">-->
-                    <textarea type="text" name="about" class="form-control" placeholder="Tell about yourself"
+                    <textarea type="text" name="about" class="form-control" placeholder="<@spring.message 'register.page.about'/>"
                               required="required"></textarea></br>
 <#--                </div>-->
             </div>
             <div class="form-group row">
 <#--                <div class="col-sm-7">-->
-                    <input type="email" name="email" class="form-control" placeholder="Enter your email"
+                    <input type="email" name="email" class="form-control" placeholder="<@spring.message 'register.page.email'/>"
                            required="required">
 <#--                </div>-->
             </div>
             <div class="form-group row">
 <#--                <div class="col-sm-7">-->
                     <input type="password" oninput="checkPassword()" id="password" name="password" class="form-control"
-                           placeholder="Enter your password" required="required">
+                           placeholder="<@spring.message 'register.page.password'/>" required="required">
                     <br>
                     <div class="card-body__text-info" style="color: #FFFFFF; font-size: 16px">
-                        Your password should meet the following requirement:
+                        <@spring.message 'password.rule'/>
                         <ul>
                             <li id="passwordLengthError">
-                                Password should be at least 8 characters long
+                                <@spring.message 'password.characters'/>
                             </li>
                             <li id="passwordContainUpperCaseLetterError">
-                                Password should contain at least 1 letter
+                                <@spring.message 'password.letter'/>
                             </li>
                             <li id="passwordContainNumberError">
-                                Password should contain at least 1 number
+                                <@spring.message 'password.number'/>
                             </li>
                         </ul>
                     </div>

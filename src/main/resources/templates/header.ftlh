@@ -28,28 +28,28 @@
 
                 <li class="navbar-item">
                     <form method="get" action="/main" class="nav-link">
-                        <button class="b1">Main</button>
+                        <button class="b1"><@spring.message 'buttons.main'/></button>
                     </form>
                 </li>
                 <li class="navbar-item">
                     <form method="get" action="/profile" class="nav-link">
-                        <button class="b1">My profile</button>
+                        <button class="b1"><@spring.message 'buttons.profile'/></button>
                     </form>
                 </li>
                 <li class="navbar-item">
                     <form method="get" action="/myChannel" class="nav-link">
-                        <button class="b1">My channel</button>
+                        <button class="b1"><@spring.message 'buttons.channel'/></button>
                     </form>
                 </li>
 
                 <li class="navbar-item">
                     <form method="get" action="/help" class="nav-link">
-                        <button class="b1">Help</button>
+                        <button class="b1"><@spring.message 'buttons.help'/></button>
                     </form>
                 </li>
                 <li class="navbar-item">
                     <form method="post" action="/logout" class="nav-link">
-                        <button class="b1" type="submit" name="logout" value="Logout" class="nav-link">Logout</button>
+                        <button class="b1" type="submit" name="logout" value="Logout" class="nav-link"><@spring.message 'buttons.logout'/></button>
                     </form>
                 </li>
 

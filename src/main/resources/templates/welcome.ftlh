@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<#import "spring.ftl" as spring />
 <head>
     <meta charset="UTF-8">
     <title>Welcome</title>
@@ -26,15 +27,14 @@
             <img src="img/space1.jpg">
             <div class="carousel-caption">
                 <h1 class="display-2">Spatium</h1>
-                <h3>Welcome!</h3>
+                <h3><@spring.message 'welcome.page.welcome'/></h3>
             </div>
         </div>
         <div class="carousel-item">
             <img src="img/space2.jpg">
             <div class="carousel-caption">
-                <h2>"The universe is like a safe to which there is a combination, but the combination is locked up in
-                    the safe."</h2>
-                <h3> - Peter de Vries, novelist</h3>
+                <h2><@spring.message 'welcome.page.phrase'/></h2>
+                <h3><@spring.message 'welcome.page.author'/></h3>
             </div>
         </div>
     </div>
@@ -42,15 +42,14 @@
 <div class="container-fluid">
     <div class="row jumbotron">
         <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
-            <p class="lead"><img src="img/createChannel.png" width="500" align="middle"> Create your channel and share videos
-            </p>
+            <p class="lead"><img src="img/createChannel.png" width="500" align="middle"> <@spring.message 'welcome.page.create'/></p>
         </div>
 
 
     </div>
     <div class="row jumbotron">
         <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
-            <p class="lead"><img src="img/videoWatch1.png" width="500" align="middle"> Watch videos of other users</p>
+            <p class="lead"><img src="img/videoWatch1.png" width="500" align="middle"><@spring.message 'welcome.page.watch'/></p>
 
         </div>
 
@@ -61,13 +60,13 @@
 <div class="container-fluid">
     <div class="row text-center alert">
         <div class="col-12">
-            <h1 class="display-4">Join us</h1>
+            <h1 class="display-4"><@spring.message 'welcome.page.join'/></h1>
         </div>
         <hr>
         <div class="col-12">
-            <a href="/signIn" class="nav-link">LogIn</a>
-            <a>or</a>
-            <a href="/signUp" class="nav-link">SignUp</a>
+            <a href="/signIn" class="nav-link"><@spring.message 'buttons.login'/></a>
+            <a><@spring.message 'welcome.page.or'/></a>
+            <a href="/signUp" class="nav-link"><@spring.message 'buttons.signup'/></a>
         </div>
     </div>
 </div>
