@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
@@ -17,9 +18,15 @@ public class Video {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long channel;
+    @ManyToOne
+    private Channel channel;
     private String name;
     private String description;
-    private Long img;
-    private Long video;
+    private LocalDateTime createdAt;
+    @OneToOne
+    @JoinColumn(name = "storageFileName")
+    FileInfo img;
+    @OneToOne
+    @JoinColumn(name = "originalFileName")
+    FileInfo video;
 }

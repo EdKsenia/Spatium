@@ -8,6 +8,6 @@ import ru.itis.springbootdemo.models.User;
 import java.util.Optional;
 
 public interface ChannelsRepository extends JpaRepository<Channel, Long> {
-    Optional<Channel> findOneByUserId(Long user);
+    Channel findOneByUserId(Long user);
     Channel findOneById(Long id);
 }

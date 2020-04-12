@@ -28,7 +28,6 @@ public class ChannelDto {
                 id(channel.getId())
                 .name(channel.getName())
                 .about(channel.getAbout())
-//                .img(channel.getImg())
                 .user(channel.getUser())
                 .build();
 

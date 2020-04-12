@@ -15,9 +15,6 @@ public class CreateChannelServiceImpl implements CreateChannelService {
     @Autowired
     private FileStorageService fileStorageService;
 
-    @Autowired
-    private UsersRepository usersRepository;
-
 
     @Autowired
     private ChannelsRepository channelsRepository;

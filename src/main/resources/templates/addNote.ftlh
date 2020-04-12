@@ -39,21 +39,21 @@
                 <form action="/addNote" method="post" name="addN" enctype="multipart/form-data" style="margin-left: 40px">
 
                     <div class="row" id="title">
-                        <input type="text" name="title" placeholder="Title*" required="required" autofocus><br>
+                        <input type="text" name="name" placeholder="Title*" required="required" autofocus><br>
                     </div>
                     <div class="row" id="description">
                         <textarea name="description" placeholder="Description*"
                                   required="required" rows="7" cols="50"></textarea><br>
                     </div>
                     <hr>
-                    <div class="row" id="media">
+                    <div  class="row" id="media">
                         +Add video
-                        <input type="file" name="fileM"/>
+                        <input type="file" name="video"/>
                     </div>
                     <br>
                     <div class="row" id="media">
                         +Add preview
-                        <input type="file" name="fileP"/>
+                        <input type="file" name="img"/>
                     </div>
                     <br>
                     <div class="row">

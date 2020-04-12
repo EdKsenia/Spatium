@@ -4,7 +4,13 @@ package ru.itis.springbootdemo.dto;
         import lombok.Builder;
         import lombok.Data;
         import lombok.NoArgsConstructor;
+        import org.springframework.web.multipart.MultipartFile;
+        import ru.itis.springbootdemo.models.Channel;
+        import ru.itis.springbootdemo.models.User;
         import ru.itis.springbootdemo.models.Video;
+
+        import java.util.List;
+        import java.util.stream.Collectors;
 
 
 @Data
@@ -13,21 +19,26 @@ package ru.itis.springbootdemo.dto;
 @Builder
 public class VideoDto {
     private Long id;
-    private Long channel;
     private String name;
     private String description;
-    private Long img;
-    private Long video_file;
-
-    public static VideoDto from(Video video) {
-        return VideoDto.builder()
-                .id(video.getId())
-                .description(video.getDescription())
+    private MultipartFile img;
+    private MultipartFile video;
+    private Channel channel;
+    //
+    public static VideoDto from(Video video){
+        return VideoDto.builder().
+                id(video.getId())
                 .name(video.getName())
+                .description(video.getDescription())
                 .channel(video.getChannel())
-                .img(video.getImg())
-                .video_file(video.getVideo())
                 .build();
+
+    }
+
+    public static List<VideoDto> from(List<Video> videos) {
+        return videos.stream()
+                .map(VideoDto::from)
+                .collect(Collectors.toList());
     }
 
 
