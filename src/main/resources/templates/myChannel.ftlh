@@ -32,10 +32,10 @@
             </ul>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="${channel.img}">
+                    <img src="files/${channel.fileInfo.storageFileName}">
                     <div class="carousel-caption">
-                        <h1 class="display-2">${name}</h1>
-                        <h3>${description}</h3>
+                        <h1 class="display-2">${channel.name}</h1>
+                        <h3>${channel.about}</h3>
                     </div>
                 </div>
             </div>
@@ -104,6 +104,6 @@
         </div>
 
     </div>
-
+</div>
 </body>
 </html>

@@ -23,13 +23,13 @@ public class StorageController {
         return "file_upload";
     }
 
-    @PostMapping("/files")
-    public ResponseEntity<String> handleFileUpload(@RequestParam("file")MultipartFile file){
-        String filePath = service.saveFile(file);
-        return ResponseEntity
-                .ok()
-                .body(filePath);
-    }
+//    @PostMapping("/files")
+//    public ResponseEntity<String> handleFileUpload(@RequestParam("file")MultipartFile file){
+//        String filePath = service.saveFile(file);
+//        return ResponseEntity
+//                .ok()
+//                .body(filePath);
+//    }
 
     @GetMapping("/files/{file-name:.+}")
     public void getFile(@PathVariable("file-name") String fileName,

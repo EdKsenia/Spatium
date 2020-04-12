@@ -13,8 +13,8 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Builder
 @Entity
-@Table(name = "channels")
-public class Channel {
+@Table(name = "help")
+public class HelpMessage{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -22,11 +22,10 @@ public class Channel {
     @ManyToOne
     private User user;
 
-    private LocalDateTime createdAt;
     private String name;
-    private String about;
+    private String phone;
 
-    @ManyToOne
-    @JoinColumn(name = "storageFileName")
-    FileInfo fileInfo;
+    private LocalDateTime createdAt;
+    private String text;
+
 }

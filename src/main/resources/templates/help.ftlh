@@ -79,12 +79,12 @@
                 <input type="text" name="name" required="required">
             </label>
             <label class="pageFormLabel">
-                <span class="pageFormTitle">Your mail:</span>
-                <input type="text" name="email" placeholder="@" required="required">
+                <span class="pageFormTitle">Your phone:</span>
+                <input type="text" name="phone" placeholder="+7(900)123-45-67" required="required">
             </label>
             <label class="pageFormLabel">
                 <span class="pageFormTitle">Message:</span>
-                <textarea name="message" required="required"></textarea>
+                <textarea name="text" required="required"></textarea>
             </label>
             <td colspan="2">
                 <input type="submit" name="send" value="Send">

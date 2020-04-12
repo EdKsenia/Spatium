@@ -23,11 +23,11 @@ public class FileStorageServiceImpl implements FileStorageService {
     private FileStorageUtil fileStorageUtil;
 
     @Override
-    public String saveFile(MultipartFile file) {
+    public FileInfo saveFile(MultipartFile file) {
         FileInfo fileInfo = fileStorageUtil.convertFromMultipart(file);
         fileInfoRepository.save(fileInfo);
         fileStorageUtil.copyToStorage(file, fileInfo.getStorageFileName());
-        return fileInfo.getStorageFileName();
+        return fileInfo;
     }
 
     @SneakyThrows
