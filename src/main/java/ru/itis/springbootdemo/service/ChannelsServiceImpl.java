@@ -6,15 +6,12 @@ import ru.itis.springbootdemo.dto.ChannelDto;
 import ru.itis.springbootdemo.models.Channel;
 import ru.itis.springbootdemo.repositories.ChannelsRepository;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 import static ru.itis.springbootdemo.dto.ChannelDto.from;
 
 @Service
 public class ChannelsServiceImpl implements ChannelsService {
-//    @Autowired
-//    private FileStorageService fileStorageService;
 
     @Autowired
     private ChannelsRepository channelsRepository;

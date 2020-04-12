@@ -19,12 +19,6 @@ import java.util.Optional;
 @Controller
 public class MyChannelController {
 
-//    @GetMapping("/myChannel")
-//    public String getMyChannelPage() {
-//        return "myChannel";
-//    }
-
-
     @Autowired
     private ChannelsService channelsService;
 
@@ -32,7 +26,6 @@ public class MyChannelController {
     private ChannelsRepository channelsRepository;
 
     @GetMapping("/myChannel")
-//    {channel-id}
     public String getConcreteChannelPage(Authentication authentication, Model model) {
         if (authentication != null) {
             UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();

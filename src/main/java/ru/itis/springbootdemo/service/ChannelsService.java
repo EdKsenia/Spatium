@@ -14,5 +14,4 @@ public interface ChannelsService {
 
     List<ChannelDto> search(String name);
 
-//    void create(ChannelDto channelDto);
 }

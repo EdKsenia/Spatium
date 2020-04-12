@@ -2,6 +2,7 @@ package ru.itis.springbootdemo.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import ru.itis.springbootdemo.dto.VideoDto;
 import ru.itis.springbootdemo.models.Channel;
 import ru.itis.springbootdemo.models.Video;
@@ -9,7 +10,7 @@ import ru.itis.springbootdemo.repositories.ChannelsRepository;
 import ru.itis.springbootdemo.repositories.VideoRepository;
 
 import java.time.LocalDateTime;
-@Component
+@Service
 public class AddVideoServiceImpl implements AddVideoService {
     @Autowired
     private FileStorageService fileStorageService;
