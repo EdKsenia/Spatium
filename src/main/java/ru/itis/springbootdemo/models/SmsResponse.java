@@ -17,7 +17,10 @@ public class SmsResponse {
         private String from;
         private String number;
         private String text;
+        private Long status;
+        private String extendStatus;
         private String channel;
+        private double cost;
         private Long dateSend;
         private Long dateCreate;
     }

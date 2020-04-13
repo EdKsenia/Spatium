@@ -80,14 +80,14 @@
             </label>
             <label class="pageFormLabel">
                 <span class="pageFormTitle">Your phone:</span>
-                <input type="tel" name="phone" id="phone" placeholder="79001234567" pattern="{7}[0-9]{10,14}" required="required">
+                <input type="tel" name="phone" id="phone" placeholder="+79001234567" pattern="[+]7[0-9]{10,14}" required="required">
             </label>
             <label class="pageFormLabel">
                 <span class="pageFormTitle">Message:</span>
                 <textarea name="text" required="required"></textarea>
             </label>
             <td colspan="2">
-                <input type="submit" name="send" value="Send">
+                <input onclick="sendMessage()" type="submit" name="send" value="Send">
             </td>
         </form>
     </div>
@@ -115,6 +115,41 @@
         document.getElementById('grey').style.display = state;
     }
 </script>
+<script src="https://code.jquery.com/jquery-2.2.4.js" charset="utf-8"></script>
+<script>
+    function sendMessage() {
+        $.ajax({
+            url: "/help/sendMessage",
+            data: {
+                "phone": $('#phone').val()
+            },
+            success: function (phone) {
 
+                // $('#phone').attr('value', ''+ phone);
+            }
+        })
+    }
+    // function signUp() {
+    //     $.ajax({
+    //         type: "POST",
+    //         url: "/signUp",
+    //         data: {
+    //             name: $('#name').val(),
+    //             email: $('#email').val(),
+    //             password: $('#password').val(),
+    //             phone: $('#phone').val(),
+    //             confirmCode: $('#confirmCode').val(),
+    //             code: $('#code').val()
+    //         },
+    //         success: function (msg) {
+    //             if (msg == 'ok') {
+    //                 window.location.href = "/signIn"
+    //             } else {
+    //                 alert('wrong code, try again')
+    //             }
+    //         }
+    //     })
+    // }
+</script>
 </body>
 </html>

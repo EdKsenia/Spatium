@@ -13,6 +13,6 @@ public class SmsRequest {
 
     private String number;
     private String text;
-    private String aero;
+    private String sign;
     private String channel;
 }

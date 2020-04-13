@@ -16,18 +16,18 @@ import static sun.misc.Version.println;
 public class SmsServiceImpl implements SmsService {
 
     @Override
-    public void sendMessage(String phone) {
+    public String sendMessage(String phone) {
         String message = "Your letter received, expect a response from our experts" ;
 
         RestTemplate restTemplate = new RestTemplate();
 
         HttpHeaders httpHeaders = new HttpHeaders();
-        httpHeaders.setBasicAuth("ksushka.e20@gmail.com", "Wk4U1uWmJMb5bSvcR4zd2kMPoZT8");
+        httpHeaders.setBasicAuth("ksushka.e@mail.ru", "itOvDD2h60tnXcPZWJTsPjat0Ud7");
 
-        HttpEntity<SmsRequest> request = new HttpEntity<>(
-                new SmsRequest(phone, message,"SMS Aero", "DIRECT"), httpHeaders);
+        HttpEntity<SmsRequest> request = new HttpEntity<>(new SmsRequest(phone, message,"SMS Aero", "DIRECT"), httpHeaders);
         String resourceUrl = "https://gate.smsaero.ru/v2/sms/send";
-
         ResponseEntity<SmsResponse> response = restTemplate.postForEntity(resourceUrl, request, SmsResponse.class);
+
+        return "" + phone;
     }
 }

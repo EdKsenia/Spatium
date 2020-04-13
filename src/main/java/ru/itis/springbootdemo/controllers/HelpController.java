@@ -30,13 +30,12 @@ public class HelpController {
 
     @ResponseBody
     @PostMapping("/help")
-    public String getHelp(Authentication authentication, HelpMessageDto form, @RequestParam("phone") String phone) {
+    public void getHelp(Authentication authentication, HelpMessageDto form, @RequestParam("phone") String phone) {
         UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
         User user = userDetails.getUser();
         form.setUser(user);
         service.help(form);
-        smsService.sendMessage(phone);
-        return "redirect:/help";
+//        return "ok";
     }
 
 //    @ResponseBody
@@ -52,9 +51,9 @@ public class HelpController {
 //        }
 //    }
 
-//    @ResponseBody
-//    @RequestMapping(path = "/help/sendCode", produces = "application/text; charset=UTF-8")
-//    public void sendCode(@RequestParam("phone") String phone) {
-//        smsService.sendConfirmCode(phone);
-//    }
+    @ResponseBody
+    @RequestMapping(path = "/help/sendMessage", produces = "application/text; charset=UTF-8")
+    public String sendMessage(@RequestParam("phone") String phone) {
+        return smsService.sendMessage(phone);
+    }
 }
