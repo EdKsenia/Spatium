@@ -80,7 +80,7 @@
             </label>
             <label class="pageFormLabel">
                 <span class="pageFormTitle">Your phone:</span>
-                <input type="text" name="phone" placeholder="+7(900)123-45-67" required="required">
+                <input type="tel" name="phone" id="phone" placeholder="79001234567" pattern="{7}[0-9]{10,14}" required="required">
             </label>
             <label class="pageFormLabel">
                 <span class="pageFormTitle">Message:</span>
