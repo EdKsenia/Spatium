@@ -49,7 +49,7 @@
                     </form>
                 </li>
                 <li class="navbar-item">
-                    <form method="post" action="/logout" class="nav-link">
+                    <form method="get" action="/logout" class="nav-link">
                         <button class="b1" type="submit" name="logout" value="Logout" class="nav-link"><@spring.message 'buttons.logout'/></button>
                     </form>
                 </li>
