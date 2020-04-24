@@ -10,7 +10,7 @@ public interface ChannelsService {
 
     List<ChannelDto> getChannels();
 
-    ChannelDto getConcreteChannel(Long channelId);
+    Channel getConcreteChannel(Long channelId);
 
     List<ChannelDto> search(String name);
 

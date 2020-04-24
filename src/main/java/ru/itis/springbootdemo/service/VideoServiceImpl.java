@@ -18,8 +18,8 @@ public class VideoServiceImpl implements VideoService{
 
 
     @Override
-    public List<VideoDto> getVideos() {
-        return from(videoRepository.findAll());
+    public List<Video> getVideos(Long id) {
+        return videoRepository.findAllByChannelId(id);
     }
 
     @Override

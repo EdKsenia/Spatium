@@ -49,55 +49,44 @@
                 </form>
             </div>
             <p></p>
-            <#--            <% List<Note> not = (List<Note>) request.getAttribute("notes");-->
-            <#--                for (Note n : not) {-->
-            <#--                    int id = n.getId();-->
-            <#--                    String preview = n.getPreview();-->
-            <#--                    String name = n.getName();-->
-            <#--                    String description = n.getDescription();-->
-            <#--                    Date date = n.getDate();-->
-            <#--            %>-->
+            <#list videos as video>
 
-            <#--            <div class="container-fluid">-->
-            <#--                <div class="row">-->
-            <#--                    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-4">-->
-            <#--                        <p class="lead"><img src= <%= preview %>>-->
-            <#--                    </div>-->
-            <#--                    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-4">-->
-            <#--                        <div class="row">-->
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-4">
+                            <p class="lead"><img src= "files/${video.img.storageFileName}">
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-4">
+                            <div class="row">
 
-            <#--                            <div class="title">-->
-            <#--                                <form action="/note" method="post">-->
-            <#--                                    <button name="id" value="<%= id %>"><%= name %>-->
-            <#--                                    </button>-->
-            <#--                                </form>-->
-            <#--                            </div>-->
-            <#--                        </div>-->
-            <#--                        <div class="row">-->
+                                <div class="title">
+                                    <form action="/note" method="post">
+                                        <a href="/note${video.id}">${video.name}
+                                        </a></td>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="row">
+                                ${video.createdAt}
+                            </div>
+                            <div class="row" id="media2">
+                                ${video.description}
+                            </div>
+                            </p>
 
-            <#--                            <%= date %>-->
-
-            <#--                        </div>-->
-            <#--                        <div class="row" id="media2">-->
-
-            <#--                            <%= description %>-->
-            <#--                        </div>-->
-            <#--                        </p>-->
-
-            <#--                    </div>-->
-            <#--                    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-1">-->
-            <#--                        <div>-->
-            <#--                            <form  method="post" action="/myChannel">-->
-            <#--                                <button name="noteId" value="<%= id %>">Delete</button>-->
-            <#--                            </form>-->
-            <#--                        </div>-->
-            <#--                    </div>-->
-            <#--                    <hr>-->
-            <#--                </div>-->
-            <#--                <hr>-->
-            <#--            </div>-->
-            <#--            <%}%>-->
-
+                        </div>
+                        <#--                                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-1">-->
+                        <#--                                    <div>-->
+                        <#--                                        <form  method="post" action="/myChannel">-->
+                        <#--                                            <button name="noteId" value="<%= id %>">Delete</button>-->
+                        <#--                                        </form>-->
+                        <#--                                    </div>-->
+                        <#--                                </div>-->
+                        <hr>
+                    </div>
+                    <hr>
+                </div>
+            </#list>
         </div>
         <div class="footer">
             <div class="inner-footer"></div>

@@ -30,7 +30,7 @@ public class VideoController {
     @Autowired
     private VideoRepository videoRepository;
 
-    @GetMapping("/note/{note-id}")
+    @GetMapping("/note{note-id}")
     public String getConcreteNotePage(@PathVariable("note-id") Long noteId, Authentication authentication, Model model) {
         if (authentication != null) {
             UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();

@@ -22,9 +22,9 @@ public class ChannelsServiceImpl implements ChannelsService {
     }
 
     @Override
-    public ChannelDto getConcreteChannel(Long channelId) {
+    public Channel getConcreteChannel(Long channelId) {
         Channel channel = channelsRepository.getOne(channelId);
-        return from(channel);
+        return channel;
     }
 
     @Override

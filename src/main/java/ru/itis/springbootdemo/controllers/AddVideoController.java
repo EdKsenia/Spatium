@@ -24,14 +24,14 @@ public class AddVideoController {
     private AddVideoService service;
 
     @GetMapping("/addNote")
-    public String getChannelPage(Authentication authentication, Model model) {
+    public String getVideoAddingPage(Authentication authentication, Model model) {
         UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
         model.addAttribute("user", userDetails.getUser());
         return "addNote";
     }
 
     @PostMapping("/addNote")
-    public String getChannel(VideoDto form, Authentication authentication) {
+    public String addVideo(VideoDto form, Authentication authentication) {
         UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
         User user = userDetails.getUser();
         service.addVideo(form, user.getId());
