@@ -15,6 +15,7 @@ public interface VideoRepository extends JpaRepository<Video, Long> {
     Optional<Video> findOneByChannelId(Long channel);
     Video findOneById(Long id);
     List<Video> findAllByChannelId(Long channel);
+    void deleteById(Long id);
 
 
     @Query("from Video video where " +

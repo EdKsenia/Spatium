@@ -36,4 +36,8 @@ public class User implements Serializable {
 
     private  String confirmCode;
 
+//    @ManyToOne
+//    @JoinColumn(name = "img")
+//    String img;
+
 }

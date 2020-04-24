@@ -12,8 +12,8 @@
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 
     <link rel="stylesheet" href="css/main.css">
-<#--    <link rel="stylesheet" href="css/note.css">-->
-<#--    <link rel="stylesheet" href="css/comment.css">-->
+        <link rel="stylesheet" href="css/note.css">
+        <link rel="stylesheet" href="css/comment.css">
 
 </head>
 <body>
@@ -21,129 +21,125 @@
 
 
 <div class="container-fluid">
-    <#--    <% int id_prev = (Integer) request.getAttribute("id_prev");-->
-    <#--        int id_next = (Integer) request.getAttribute("id_next");-->
-    <#--        int id = (Integer) request.getAttribute("id_note");-->
-    <#--    %>-->
     <div class="row jumbotron">
-        <div class="col-md-1">
-            <#--            <% if (id_prev != 0) {%>-->
-            <#--            <div>-->
-            <#--                <form action="/note" method="post">-->
-            <#--                    <button class="btn btn-primary" name="id" value="<%= id_prev %>">previous-->
-            <#--                    </button>-->
-            <#--                </form>-->
-            <#--            </div>-->
-            <#--            <% } else {%>-->
-            <#--            <% } %>-->
-            <#--        </div>-->
-            <div class="col-md-10" id="mainvid">
-                <div align="center" class="video_view">
-                    <video controls poster="files/${video.img.getStorageFileName()}" preload="none">
-                        <source src="files/${video.video.getStorageFileName()}" type="video/mp4">
-                    </video>
-                </div>
-
-                <#--            <%--                <% if (id_prev != 0) {%>--%>-->
-                <#--            <%--                <div>--%>-->
-                <#--            <%--                    <form action="/note" method="post">--%>-->
-                <#--            <%--                        <button name="id" value="<%= id_prev %>">previous--%>-->
-                <#--            <%--                        </button>--%>-->
-                <#--            <%--                    </form>--%>-->
-                <#--            <%--                </div>--%>-->
-                <#--            <%--                <% } else {%>--%>-->
-                <#--            <%--                <% } %>--%>-->
-                <#--            <%--                <% if (id_next != 0) {%>--%>-->
-                <#--            <%--                <div>--%>-->
-                <#--            <%--                    <form action="/note" method="post">--%>-->
-                <#--            <%--                        <button name="id" value="<%= id_next %>">next--%>-->
-                <#--            <%--                        </button>--%>-->
-                <#--            <%--                    </form>--%>-->
-                <#--            <%--                </div>--%>-->
-                <#--            <%--                <% } else {%>--%>-->
-                <#--            <%--                <% } %>--%>-->
-                <hr>
-                <p><img src="files/${channel.fileInfo.storageFileName}">${channel.name}</p>
-                <div class="desc">
-                    <label class="col-sm-2 col-form-label">Title: </label>
-                    <a href="#" type="submit" name="note" value="note">${video.name}</a>
-                </div>
-                <div class="desc">
-                    <label class="col-sm-2 col-form-label">Date: </label>
-                    <a>${video.getCreatedAt()}</a>
-                </div>
-                <div class="desc">
-                    <label class="col-sm-2 col-form-label">Description: </label>
-                    <a>${video.description}</a>
-                </div>
-
-
-                <#--            <div class="comments">-->
-                <#--                <h3 class="title-comments">Comments </h3>-->
-                <#--                <ul class="media-list">-->
-                <#--                    <% List<Comment> comments = (List<Comment>) request.getAttribute("comments");-->
-                <#--                        for (Comment comment : comments) {-->
-                <#--                            int id_com = comment.getId();-->
-                <#--                            String text = comment.getText();-->
-                <#--                            Date date = comment.getDate();-->
-                <#--                            String username = comment.getUserName();-->
-                <#--                            String img = comment.getImg();-->
-
-                <#--                    %>-->
-                <#--                    <li class="media">-->
-                <#--                        <div class="media-left">-->
-                <#--                            <a>-->
-                <#--                                <img class="media-object img-thumbnail" src="<%= img %>" alt="...">-->
-                <#--                            </a>-->
-                <#--                        </div>-->
-                <#--                        <div class="media-body">-->
-                <#--                            <div class="media-heading">-->
-                <#--                                <div class="author"><%= username %>-->
-                <#--                                </div>-->
-                <#--                                <div class="metadata">-->
-                <#--                                    <span class="date"><%=date %></span>-->
-                <#--                                </div>-->
-                <#--                            </div>-->
-                <#--                            <div class="media-text text-justify"><%= text %>-->
-                <#--                            </div>-->
-                <#--                        </div>-->
-                <#--                        <hr>-->
-                <#--                    </li>-->
-                <#--                    <%}%>-->
-
-                <#--                </ul>-->
-                <#--                <div class="media-body">-->
-                <#--                    <div class="media-heading">-->
-                <#--                        <div class="author">You</div>-->
-                <#--                        <div class="metadata">-->
-                <#--                            <span class="date">Now</span>-->
-                <#--                        </div>-->
-                <#--                        <div class="media-text text-justify">-->
-                <#--                            <form action="/note" method="post">-->
-                <#--                                <span>Comment</span><br>-->
-                <#--                                <textarea id="comment" name="text" cols="80" rows="7"></textarea><br>-->
-                <#--                                <button name="send" id="send" value="<%= id %>">Send</button>-->
-                <#--                            </form>-->
-                <#--                        </div>-->
-                <#--                    </div>-->
-                <#--                </div>-->
-                <#--                </tbody>-->
-                <#--                </table>-->
-                <#--            </div>-->
+        <#--        <div class="col-md-1">-->
+        <#--                        <#if prev?has_content>-->
+        <#--                            <div>-->
+        <#--                                <form action="/note" method="get">-->
+        <#--            &lt;#&ndash;                        <button class="btn btn-primary" name="id" value=${prev.id}>previous&ndash;&gt;-->
+        <#--            &lt;#&ndash;                        </button>&ndash;&gt;-->
+        <#--                                    <a href="/note${prev.id}">previous-->
+        <#--                                    </a></td>-->
+        <#--                                </form>-->
+        <#--                            </div>-->
+        <#--            </#if>-->
+        <#--        </div>-->
+        <div class="col-md-10" id="mainvid">
+            <div align="center" class="video_view">
+                <video controls poster="files/${video.img.getStorageFileName()}" preload="none">
+                    <source src="files/${video.video.getStorageFileName()}" type="video/mp4">
+                </video>
             </div>
-            <#--        <div class="col-md-1">-->
-            <#--            <% if (id_next != 0) {%>-->
-            <#--            <div>-->
-            <#--                <form action="/note" method="post">-->
-            <#--                    <button class="btn btn-primary" name="id" value="<%= id_next %>">next-->
-            <#--                    </button>-->
-            <#--                </form>-->
-            <#--            </div>-->
-            <#--            <% } else {%>-->
-            <#--            <% } %>-->
-            <#--        </div>-->
+            <hr>
+            <p><img src="files/${channel.fileInfo.storageFileName}">${channel.name}</p>
+            <div class="desc">
+                <label class="col-sm-2 col-form-label">Title: </label>
+                <a href="#" type="submit" name="note" value="note">${video.name}</a>
+            </div>
+            <div class="desc">
+                <label class="col-sm-2 col-form-label">Date: </label>
+                <a>${video.getCreatedAt()}</a>
+            </div>
+            <div class="desc">
+                <label class="col-sm-2 col-form-label">Description: </label>
+                <a>${video.description}</a>
+            </div>
         </div>
     </div>
+    <#--                <#if next?has_content>-->
+    <#--                    <div>-->
+    <#--                        <form action="/note" method="get">-->
+    <#--&lt;#&ndash;                            <button class="btn btn-primary" name="id" value=${next.id}>next&ndash;&gt;-->
+    <#--&lt;#&ndash;                            </button>&ndash;&gt;-->
+    <#--                            <a href="/note${next.id}">next-->
+    <#--                            </a></td>-->
+    <#--                        </form>-->
+    <#--                    </div>-->
+    <#--                </#if>-->
+
+    <div class="comments">
+        <h3 id = "res" class="title-comments">Comments </h3>
+        <#if comments?has_content>
+            <#list comments as comment>
+                <ul class="media-list">
+                    <li class="media">
+                        <#--<div class="media-left">-->
+                        <#--    <a>-->
+                        <#--        <img class="media-object img-thumbnail" src="files/${comment.user}" alt="...">-->
+                        <#--    </a>-->
+                        <#--</div>-->
+                        <div class="media-body">
+                            <div class="media-heading">
+                                <div class="author">${comment.user.name}
+                                </div>
+                                <div class="metadata">
+                                    <span class="date">${comment.createdAt}</span>
+                                </div>
+                            </div>
+                            <div class="media-text text-justify">${comment.text}
+                            </div>
+                        </div>
+                        <hr>
+                    </li>
+
+                </ul>
+            </#list>
+        </#if>
+    </div>
+
+    <div class="media-body">
+        <div class="media-heading">
+            <div class="author">You</div>
+            <div class="metadata">
+                <span class="date">Now</span>
+            </div>
+            <div class="media-text text-justify">
+                <form action="/comment${video.id}" method="post">
+                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+                    <span>Comment</span><br>
+                    <textarea id="comment" name="text" cols="80" rows="7"></textarea><br>
+                    <#--                    <input type="submit" name="send" value="Send">-->
+                    <button onclick="f(${video.id})" name="send" id="send">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
 </div>
+
+<script type="application/javascript">
+    function f(par) {
+        $.ajax({
+            url: "/comments"+par,
+            data:{"text": $("#comment").val()},
+            dataType: "json",
+            type: "post",
+            contentType: "application/json",
+            success: function (msg) {
+                var user = msg.user.name;
+                var data = msg.createAt;
+                var text = msg.text;
+
+                $("#res").append("<ul class=\"media-list\"><li class=\"media\">" +
+                    "<div class=\"media-body\"><div class=\"media-heading\">" +
+                    "<div class=\"author\">"+user + "</div><div class=\"metadata\">" +
+                    "<span class=\"date\">"+data+"</span></div></div>" +
+                    "<div class=\"media-text text-justify\">"+data+"</div></div>" +
+                    "<hr></li></ul>");
+            }
+        })
+
+    }
+</script>
 </body>
 </html>

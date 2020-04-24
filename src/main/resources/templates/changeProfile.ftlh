@@ -58,6 +58,7 @@
 <#--                        <input type="file" name="fileP" value="${img}" required="required">-->
                     </div>
                     <br>
+                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
                     <div class="row" id="submit">
                         <input type="submit" name="saveNote" value="Save">
                     </div>

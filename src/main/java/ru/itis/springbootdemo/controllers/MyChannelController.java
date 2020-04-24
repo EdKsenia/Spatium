@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import ru.itis.springbootdemo.dto.ChannelDto;
 import ru.itis.springbootdemo.dto.VideoDto;
 import ru.itis.springbootdemo.models.Channel;
@@ -26,9 +27,6 @@ public class MyChannelController {
     private ChannelsService channelsService;
 
     @Autowired
-    private ChannelsRepository channelsRepository;
-
-    @Autowired
     private VideoService videoService;
 
     @GetMapping("/myChannel")
@@ -45,7 +43,6 @@ public class MyChannelController {
         }
         return "createChannel";
     }
-
 
 
 }

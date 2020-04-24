@@ -46,6 +46,7 @@
 <#--                        <input type="file" name="img"/>-->
                     </div>
                     <br>
+                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
                     <div class="row" id="submit">
                         <input type="submit" name="saveChannel" value="Save">
                     </div>

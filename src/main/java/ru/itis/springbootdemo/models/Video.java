@@ -24,9 +24,9 @@ public class Video {
     private String description;
     private LocalDateTime createdAt;
     @OneToOne
-    @JoinColumn(name = "storageFileName")
+    @JoinColumn(name = "img")
     FileInfo img;
     @OneToOne
-    @JoinColumn(name = "originalFileName")
+    @JoinColumn(name = "video")
     FileInfo video;
 }

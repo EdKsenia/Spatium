@@ -26,11 +26,12 @@
         <div class="nav">
             <div class="meme" id="photo">
                 <div class="photoProfile">
-<#--                    <#if (user.img==null)>-->
-                    <span><img src="img/bg2.jpg"></span>
-<#--                    <#else>-->
-<#--                    <span><img src="${img}"></span>-->
-<#--                    <%}%>-->
+                    <#if user.img?has_content>
+                    <span><img src="${user.img}"></span>
+
+                    <#else>
+                        <span><img src="img/bg2.jpg"></span>
+                    </#if>
                 </div>
                 <br>
                 <br>

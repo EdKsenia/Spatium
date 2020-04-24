@@ -12,4 +12,6 @@ public interface VideoService {
     VideoDto getConcreteVideo(Long videoId);
 
     List<VideoDto> search(String name);
+
+    void delete(Long id);
 }

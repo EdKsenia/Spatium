@@ -21,6 +21,7 @@ public class SpringBootDemoApplication {
     public ExecutorService executorService(){
         return Executors.newCachedThreadPool();
     }
+
     @Bean
     public ObjectMapper objectMapper() {
         return new ObjectMapper();

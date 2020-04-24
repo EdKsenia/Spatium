@@ -66,6 +66,7 @@
                     </div>
 <#--                </div>-->
             </div>
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
             <div class="buttonRegister">
                 <input type="submit" name="register" value="Register">
             </div>

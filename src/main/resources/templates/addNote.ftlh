@@ -56,6 +56,7 @@
                         <input type="file" name="img"/>
                     </div>
                     <br>
+                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
                     <div class="row">
                         <input type="submit" name="saveNote" value="Save">
                     </div>

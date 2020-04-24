@@ -32,4 +32,9 @@ public class VideoServiceImpl implements VideoService{
     public List<VideoDto> search(String name) {
         return null;
     }
+
+    @Override
+    public void delete(Long id) {
+        videoRepository.deleteById(id);
+    }
 }

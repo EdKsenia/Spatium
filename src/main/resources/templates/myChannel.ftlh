@@ -49,17 +49,22 @@
                 </form>
             </div>
             <p></p>
-            <#list videos as video>
 
+            <#list videos as video>
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-4">
-                            <p class="lead"><img src= "files/${video.img.storageFileName}">
+                            <p class="lead"><img src="files/${video.img.storageFileName}">
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-4">
                             <div class="row">
 
                                 <div class="title">
+<#--                                    <form action="/note" method="post">-->
+<#--&lt;#&ndash;                                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">&ndash;&gt;-->
+<#--                                        <button href="/note${video.id}" class="btn btn-primary" name="noteId" >${video.name}-->
+<#--                                        </button>-->
+<#--                                    </form>-->
                                     <form action="/note" method="post">
                                         <a href="/note${video.id}">${video.name}
                                         </a></td>
@@ -75,13 +80,14 @@
                             </p>
 
                         </div>
-                        <#--                                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-1">-->
-                        <#--                                    <div>-->
-                        <#--                                        <form  method="post" action="/myChannel">-->
-                        <#--                                            <button name="noteId" value="<%= id %>">Delete</button>-->
-                        <#--                                        </form>-->
-                        <#--                                    </div>-->
-                        <#--                                </div>-->
+                        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-1">
+                            <div>
+                                <form method="post" action="/deleteNote${video.id}">
+                                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+                                    <button name="noteId">Delete</button>
+                                </form>
+                            </div>
+                        </div>
                         <hr>
                     </div>
                     <hr>

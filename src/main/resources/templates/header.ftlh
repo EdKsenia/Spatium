@@ -12,8 +12,6 @@
 
 </head>
 
-
-
 <#--<% session = request.getSession();-->
 <#--    if (session.getAttribute("current_user") != null) { %>-->
 <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
