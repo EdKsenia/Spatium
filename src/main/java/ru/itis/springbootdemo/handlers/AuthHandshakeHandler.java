@@ -22,12 +22,12 @@ public class AuthHandshakeHandler implements HandshakeHandler {
     public boolean doHandshake(ServerHttpRequest serverHttpRequest, ServerHttpResponse serverHttpResponse, WebSocketHandler webSocketHandler, Map<String, Object> map) throws HandshakeFailureException {
         ServletServerHttpRequest request = (ServletServerHttpRequest)serverHttpRequest;
         String cookie = WebUtils.getCookie(request.getServletRequest(), "X-Authorization").getValue();
-        if (cookie.equals("123456")) {
+//        if (cookie.equals("123456")) {
             return defaultHandshakeHandler.doHandshake(serverHttpRequest, serverHttpResponse, webSocketHandler, map);
-        } else {
-            serverHttpResponse.setStatusCode(HttpStatus.FORBIDDEN);
-            return false;
-        }
+//        } else {
+//            serverHttpResponse.setStatusCode(HttpStatus.FORBIDDEN);
+//            return false;
+//        }
     }
 }
 

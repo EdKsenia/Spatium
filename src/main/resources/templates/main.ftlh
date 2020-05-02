@@ -54,7 +54,7 @@
                     function f() {
                         if ($("#query").val().length >= 1) {
                             $.ajax({
-                                url: "/dosearch",
+                                url: "/search",
                                 data: {"query": $("#query").val(), "search_param": $("#search_param").val()},
                                 dataType: "json",
                                 success: function (msg) {

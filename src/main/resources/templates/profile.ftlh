@@ -58,13 +58,15 @@
 <#--                    ${user.channel}-->
 <#--                </div>-->
                 <div class="links">
-<#--                    <% int ch = (Integer) request.getAttribute("channelId");-->
-<#--                    if (ch == 0) { %>-->
-                    <a href="/createChannel" type="submit" name="create" value="Create">Create Channel</a>
-<#--                    <% } else { %>-->
+                    <#if channel?has_content>
                     <a href="/myChannel" type="submit" name="myChannel" value="Channel">My Channel</a>
-<#--                    <%}%>-->
+                    <#else>
+                        <a href="/createChannel" type="submit" name="create" value="Create">Create Channel</a>
+                    </#if>
                     <a href="/changeProfile" type="submit" name="create" value="Change">Change</a>
+                    <#if user.role=="ADMIN">
+                        <a href="/index" type="submit" name="forum" value="Forum">Tex forum</a>
+                    </#if>
                 </div>
             </div>
             <br>

@@ -27,7 +27,7 @@ public class WebSocketMessagesHandler extends TextWebSocketHandler {
 //    }
 
     @Override
-    public void handleMessage(WebSocketSession session, WebSocketMessage<?> message) throws Exception {
+        public void handleMessage(WebSocketSession session, WebSocketMessage<?> message) throws Exception {
         String messageText = (String) message.getPayload();
         SocketMessageDto messageFromJson = objectMapper.readValue(messageText, SocketMessageDto.class);
         if (!sessions.containsKey(messageFromJson.getFrom())) {

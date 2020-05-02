@@ -7,6 +7,10 @@
         li {
             list-style-type: none; /* Убираем маркеры */
         }
+        .error {
+            color: #ff0000;
+        }
+
     </style>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,20 +40,25 @@
             <div class="main-section" id="form_edit_profile">
                 <h2>Edit profile</h2>
 
-
+                <@spring.bind "profileForm"/>
                 <form action="/changeProfile" method="post" name="editPro" enctype="multipart/form-data">
-
-                    <div class="row" id="info1">
-                        <input type="text" name="name" placeholder="Name*" value="${user.name}"><br>
+                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+                    <div class="row" id="info1">Name
+<#--                        <input type="text" name="name" placeholder="Name*" value="${user.name}"><br>-->
+                        <@spring.formInput "profileForm.name"/>
+                        <@spring.showErrors "<br>"/>
                     </div>
 
-                    <div class="row" id="info">
-                        <input type="text" name="born" placeholder="Born*" value="${user.born}"><br>
+                    <div class="row" id="info">Born
+<#--                        <input type="text" name="born" placeholder="Born*" value="${user.born}"><br>-->
+                        <@spring.formInput "profileForm.born"/>
+                        <@spring.showErrors "<br>","error"/>
                     </div>
 
-                    <div class="row" id="info">
-                        <textarea name="about" placeholder="AboutMe*" rows="4" cols="54"
-                                  value="${user.about}"></textarea><br>
+                    <div class="row" id="info">About me
+                        <@spring.formInput "profileForm.about"/>
+<#--                        <textarea name="about" placeholder="AboutMe*" rows="4" cols="54"-->
+<#--                                  value="${user.about}"></textarea><br>-->
                     </div>
                     <hr>
                     <div class="row" id="media">

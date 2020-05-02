@@ -32,6 +32,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //        http.csrf().disable();
         http.authorizeRequests()
                 .antMatchers("/users/**").hasAuthority("ADMIN")
+                .antMatchers("/index").hasAuthority("ADMIN")
                 .antMatchers("/").authenticated()
                 .antMatchers("/profile").authenticated()
                 .antMatchers("/addNote").authenticated()
@@ -40,16 +41,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/myChannel").authenticated()
                 .antMatchers("/note").authenticated()
                 .antMatchers("/welcome").permitAll()
-                .antMatchers("/help").permitAll()
+                .antMatchers("/help").authenticated()
                 .antMatchers("/main").permitAll()
                 .antMatchers("/signUp").permitAll()
                 .antMatchers("/files").permitAll()
                 .antMatchers("/confirm/**").permitAll()
                 .antMatchers("/search/**").permitAll()
+                .antMatchers("/api/profile").permitAll()
                 .and()
                 .rememberMe().rememberMeParameter("remember-me").tokenRepository(persistentTokenRepository());
 
-
+        http.csrf().ignoringAntMatchers("/api/profile");
         http.formLogin()
                 .loginPage("/signIn")
                 .defaultSuccessUrl("/")

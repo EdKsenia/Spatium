@@ -18,6 +18,7 @@ public class WebSocketConfiguration implements WebSocketConfigurer {
 
     @Autowired
     private WebSocketMessagesHandler handler;
+
     @Bean
     public TaskScheduler taskScheduler() {
         return new ConcurrentTaskScheduler(Executors.newSingleThreadScheduledExecutor());
