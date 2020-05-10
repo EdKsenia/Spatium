@@ -9,9 +9,9 @@ public interface VideoService {
 
     List<Video> getVideos(Long id);
 
-    VideoDto getConcreteVideo(Long videoId);
+    List<Video> getAll();
 
-    List<VideoDto> search(String name);
+    VideoDto getConcreteVideo(Long videoId);
 
     void delete(Long id);
 }

@@ -47,6 +47,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/files").permitAll()
                 .antMatchers("/confirm/**").permitAll()
                 .antMatchers("/search/**").permitAll()
+                .antMatchers("/main/**").permitAll()
                 .antMatchers("/api/profile").permitAll()
                 .and()
                 .rememberMe().rememberMeParameter("remember-me").tokenRepository(persistentTokenRepository());

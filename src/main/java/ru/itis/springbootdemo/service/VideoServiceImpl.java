@@ -23,14 +23,14 @@ public class VideoServiceImpl implements VideoService{
     }
 
     @Override
-    public VideoDto getConcreteVideo(Long videoId) {
-        Video video = videoRepository.findOneById(videoId);
-        return from(video);
+    public List<Video> getAll() {
+        return videoRepository.findAll();
     }
 
     @Override
-    public List<VideoDto> search(String name) {
-        return null;
+    public VideoDto getConcreteVideo(Long videoId) {
+        Video video = videoRepository.findOneById(videoId);
+        return from(video);
     }
 
     @Override

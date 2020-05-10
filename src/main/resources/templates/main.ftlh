@@ -23,126 +23,127 @@
 <!--шапка-->
 <#include "header.ftlh">
 <div class="col-md-12">
-<div class="col-md-9 col-md-push-1">
+    <div class="col-md-9 col-md-push-1">
 
-    <div>
-        <div class="container" id="search_form">
-            <div class="nav"  align="center">
-                <div class="col-xs-8 col-xs-offset-4" >
-
-                    <form action="#" method="get" id="searchForm" class="input-group">
-                        <div class="input-group-btn search-panel" id="choice">
-                            <select name="search_param" id="search_param" class="btn btn-default dropdown-toggle"
-                                    data-toggle="dropdown" onfocus="">
-                                <option value="all">All</option>
-                                <option value="note">Note</option>
-                                <option value="username">Username</option>
-                                <option value="channel">Channel</option>
-                            </select>
+        <div>
+            <div class="container" id="search_form">
+                <div class="nav" align="center">
+                    <div class="col-xs-8 col-xs-offset-4">
+<#--                        <div class="input-group-btn search-panel" id="choice">-->
+<#--                            <select name="search_param" id="search_param" class="btn btn-default dropdown-toggle"-->
+<#--                                    data-toggle="dropdown" onfocus="">-->
+<#--                                <option value="all">All</option>-->
+<#--                                <option value="note">Note</option>-->
+<#--                                <option value="username">Username</option>-->
+<#--                                <option value="channel">Channel</option>-->
+<#--                            </select>-->
+<#--                        </div>-->
+                        <br>
+                        <div align="center">
+                            <input type="text" class="form-control" name="x" id="query" placeholder="Search term...">
                         </div>
-                        <div align="center"><input type="text" class="form-control" name="x" id="query" oninput="f()"
-                                                   placeholder="Search term..."></div>
+                        <div>
+                            <select class="custom-select" id="size" name="size">
+                                <option selected disabled value=2>2</option>
+                                <option value=3>3</option>
+                                <option value=5>5</option>
+                                <option value=10>10</option>
+                                <option value=20>20</option>
+                            </select></div>
+                        <input type="button" id="send" class="btn" value="search" onclick="f(1)"/>
+                        
+                    </div>
 
-<#--                        <%--                    <span class="input-group-btn">--%>-->
-<#--                        <%--                        <button class="btn btn-default" type="submit">--%>-->
-<#--                        <%--                           <span class="glyphicon glyphicon-search"></span>--%>-->
-<#--                        <%--                        </button>--%>-->
-<#--                        <%--                    </span>--%>-->
-                    </form>
-                </div>
-                <script type="application/javascript">
-                    function f() {
-                        if ($("#query").val().length >= 1) {
-                            $.ajax({
-                                url: "/search",
-                                data: {"query": $("#query").val(), "search_param": $("#search_param").val()},
-                                dataType: "json",
-                                success: function (msg) {
-                                    if (msg.objects.length > 0) {
-                                        $("#res").html("");
-                                        for (var i = 0; i < msg.objects.length; i++) {
-                                            var o = msg.objects[i];
-                                            var id = o.id;
-                                            var preview = o.preview;
-                                            var name = o.name;
-                                            var date = o.date;
-                                            var description = o.description;
+                    <script type="application/javascript">
+                        function f(page) {
+                            var s = document.getElementById("size");
+                            var size = s.options[s.selectedIndex].value;
+                            if ($("#query").val().length >= 1) {
+                                $.ajax({
+                                    url: "/main/search",
+                                    data: {
+                                        "query": $("#query").val(),
+                                        "page": page - 1,
+                                        "size": size
+                                    },
+                                    dataType: "json",
+                                    success: function (msg) {
+                                        if (msg.videos.length > 0) {
+                                            $("#res").html("");
 
-                                            $("#res").append("<div class=\"container-fluid\" id=\"content\"><div class=\"row\"><div class=\"col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-8\">"+
-                                                "<p class=\"lead\"><img src= \'" + preview + "\'></p>"+
-                                                "</div><div class=\"col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-4\"><div class=\"row\"><div class=\"title\">"+
-                                                "<form action=\"/note\" method=\"post\">"+
-                                                "<button name=\"id\" value=\"" + id + "\">" + name + "</button>"+
-                                                "</form></div></div><div class=\"row\" id=\"date\">"+ date + "</div>"+
-                                                "<div class=\"row\" id=\"media2\">" + description + "</div></p></div><hr></div><hr></div>");
+                                            for (var i = 0; i < msg.videos.length; i++) {
+                                                var o = msg.videos[i];
+                                                var id = o.id;
+                                                var preview = "files/" + o.img.storageFileName;
+                                                var name = o.name;
+                                                var date = o.createdAt;
+                                                var description = o.description;
 
+                                                $("#res").append("<div class=\"container-fluid\" id=\"content\"><div class=\"row\"><div class=\"col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-8\">" +
+                                                    "<p class=\"lead\"><img src= \'" + preview + "\'></p>" +
+                                                    "</div><div class=\"col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-4\"><div class=\"row\"><div class=\"title\">" +
+                                                    "<form action=\"/note\" method=\"post\">" +
+                                                    "<a href=\"/note"+ id+ "\">" + name + "</a></td>"+
+                                                    "</form></div></div><div class=\"row\" id=\"date\">" + date + "</div>" +
+                                                    "<div class=\"row\" id=\"media2\">" + description + "</div></p></div><hr></div><hr></div>");
+
+                                            }
+
+                                        } else {
+                                            $("#res").html("No results..");
                                         }
-                                    } else {
-                                        $("#res").html("No results..");
                                     }
-                                }
-                            })
-                        } else {
-                            $("#res").html("");
+                                })
+                            } else {
+                                $("#res").html("");
+                            }
                         }
-                    }
-                </script>
+                    </script>
+                </div>
             </div>
-        </div>
 
-        <div id="res"></div>
-
-        <div class="sidebar">
-            <div class="inner-sidebar">
+            <div id="res"></div>
+            <div class="sidebar">
+                <div class="inner-sidebar">
 
 
-                <h3>Last add</h3>
-<#--                <% List<Note> not = (List<Note>) request.getAttribute("notes");-->
-<#--                    for (Note n : not) {-->
-<#--                        int id = n.getId();-->
-<#--                        String preview = n.getPreview();-->
-<#--                        String name = n.getName();-->
-<#--                        String description = n.getDescription();-->
-<#--                        Date date = n.getDate();-->
-<#--                %>-->
-<#--                <div class="container-fluid" id="content">-->
-<#--                    <div class="row">-->
-<#--                        <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-8">-->
-<#--                            <p class="lead"><img src= <%= preview %>></p>-->
-<#--                        </div>-->
-<#--                        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-4">-->
-<#--                            <div class="row">-->
+                    <h3>Last add</h3>
 
-<#--                                <div class="title">-->
-<#--                                    <form action="/note" method="post">-->
-<#--                                        <button name="id" value="<%= id %>"><%= name %>-->
-<#--                                        </button>-->
-<#--                                    </form>-->
-<#--                                </div>-->
-<#--                            </div>-->
-<#--                            <div class="row" id="date">-->
+                    <#list videos as video>
+                        <div class="container-fluid" id="content">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-7">
+                                    <p class="lead"><img src="files/${video.img.storageFileName}">
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-4">
+                                    <div class="row">
 
-<#--                                <%= date %>-->
+                                        <div class="title">
+                                            <form action="/note" method="post">
+                                                <a href="/note${video.id}">${video.name}
+                                                </a></td>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        ${video.createdAt}
+                                    </div>
+                                    <div class="row" id="media2">
+                                        ${video.description}
+                                    </div>
+                                    </p>
 
-<#--                            </div>-->
-<#--                            <div class="row" id="media2">-->
-
-<#--                                <%= description %>-->
-<#--                            </div>-->
-<#--                            </p>-->
-
-<#--                        </div>-->
-
-<#--                        <hr>-->
-<#--                    </div>-->
-<#--                    <hr>-->
-<#--                </div>-->
-<#--                <%}%>-->
+                                </div>
+                                <hr>
+                            </div>
+                            <hr>
+                        </div>
+                    </#list>
+                </div>
             </div>
         </div>
     </div>
 </div>
- </div>
 
 </body>
 </html>

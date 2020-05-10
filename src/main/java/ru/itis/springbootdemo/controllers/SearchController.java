@@ -9,13 +9,13 @@ import ru.itis.springbootdemo.dto.VideoSearchResults;
 import ru.itis.springbootdemo.service.SearchService;
 
 @RestController
-@RequestMapping("/search")
+@RequestMapping("/main")
 public class SearchController {
     @Autowired
     private SearchService service;
 
-    @GetMapping("/videos")
-    public VideoSearchResults searchVideos(@RequestParam("q") String query,
+    @GetMapping("/search")
+    public VideoSearchResults searchVideos(@RequestParam("query") String query,
                                          @RequestParam("page") Integer page,
                                          @RequestParam("size") Integer size) {
         return service.searchVideos(query, page, size);

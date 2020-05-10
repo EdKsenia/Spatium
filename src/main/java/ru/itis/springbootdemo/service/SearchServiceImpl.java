@@ -20,7 +20,7 @@ public class SearchServiceImpl implements SearchService {
     public VideoSearchResults searchVideos(String query, Integer page, Integer size) {
         PageRequest pageRequest = PageRequest.of(page, size);
         Page<Video> pageResult = videoRepository.search(query, pageRequest);
-        List<VideoDto> videos = VideoDto.from(pageResult.getContent());
+        List<Video> videos = pageResult.getContent();
         return VideoSearchResults.builder()
                 .videos(videos)
                 .count(pageResult.getTotalPages())

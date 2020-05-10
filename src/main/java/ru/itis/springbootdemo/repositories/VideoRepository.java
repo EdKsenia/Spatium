@@ -15,8 +15,9 @@ public interface VideoRepository extends JpaRepository<Video, Long> {
     Optional<Video> findOneByChannelId(Long channel);
     Video findOneById(Long id);
     List<Video> findAllByChannelId(Long channel);
+    List<Video> findAll();
     void deleteById(Long id);
-
+    List<Video> findAllByNameContainsIgnoreCase(String name);
 
     @Query("from Video video where " +
         "(upper(video.name) like concat('%', upper(:query), '%') or " +

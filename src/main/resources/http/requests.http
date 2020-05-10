@@ -1,11 +1,5 @@
 #GET localhost/search/videos?q=ksus&page=1&size=1
 
-POST http://localhost/api/profile
-Content-Type: application/json
-
-{
-  "born": null
-}
-
+GET localhost:80/main/search?query=be&page=0&size=1
 
 ###
