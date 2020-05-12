@@ -27,7 +27,7 @@
             <div class="meme" id="photo">
                 <div class="photoProfile">
                     <#if user.img?has_content>
-                    <span><img src="${user.img}"></span>
+                    <span><img src="files/${user.img}"></span>
 
                     <#else>
                         <span><img src="img/bg2.jpg"></span>

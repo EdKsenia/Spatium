@@ -4,16 +4,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 import ru.itis.springbootdemo.dto.ChangeUserDto;
-import ru.itis.springbootdemo.dto.SignUpDto;
 import ru.itis.springbootdemo.models.FileInfo;
 import ru.itis.springbootdemo.models.User;
 import ru.itis.springbootdemo.repositories.UsersRepository;
-import ru.itis.springbootdemo.repositories.VideoRepository;
 
 import java.util.Optional;
 
 @Component
-public class ChangeProfileImpl implements ChangeProfile {
+public class ChangeProfileServiceImpl implements ChangeProfileService {
 
     @Autowired
     private UsersRepository usersRepository;
@@ -39,7 +37,7 @@ public class ChangeProfileImpl implements ChangeProfile {
             user.setImg(fileForUpdate);
 
             usersRepository.save(user);
-//            sessionBean.setUser(user);
+
         }
 
     }

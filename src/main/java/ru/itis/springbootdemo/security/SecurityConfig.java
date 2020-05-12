@@ -48,11 +48,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/confirm/**").permitAll()
                 .antMatchers("/search/**").permitAll()
                 .antMatchers("/main/**").permitAll()
-                .antMatchers("/api/profile").permitAll()
+                .antMatchers("/api/changeProfile").permitAll()
                 .and()
                 .rememberMe().rememberMeParameter("remember-me").tokenRepository(persistentTokenRepository());
 
-        http.csrf().ignoringAntMatchers("/api/profile");
+        http.csrf().ignoringAntMatchers("/api/changeProfile");
         http.formLogin()
                 .loginPage("/signIn")
                 .defaultSuccessUrl("/")

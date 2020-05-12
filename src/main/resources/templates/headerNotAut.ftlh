@@ -11,47 +11,29 @@
     <link rel="stylesheet" href="static/css/header.css">
 
 </head>
-
 <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
     <div class="container-fluid">
 
-        <a href="/main" class="navbar-brand"><img src="img/logo1.png" style="width: 60px"></a>
+        <a href="/main" class="navbar-brand"><img src="img/logo1.png"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse"
                 data-target="#navbarResponsive">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
+        <div class="collapse navbar-collapse" id="navbarResponsive2">
             <ul class="navbar-nav ml-auto">
-
                 <li class="navbar-item">
-                    <form method="get" action="/main" class="nav-link">
-                        <button class="b1"><@spring.message 'buttons.main'/></button>
+                    <form method="get" action="/signIn" class="nav-link">
+                        <button class="b1"><@spring.message 'buttons.login'/></button>
                     </form>
                 </li>
                 <li class="navbar-item">
-                    <form method="get" action="/profile" class="nav-link">
-                        <button class="b1"><@spring.message 'buttons.profile'/></button>
+                    <form method="get" action="/signUp" class="nav-link">
+                        <button class="b1"><@spring.message 'buttons.signup'/></button>
                     </form>
                 </li>
-                <li class="navbar-item">
-                    <form method="get" action="/myChannel" class="nav-link">
-                        <button class="b1"><@spring.message 'buttons.channel'/></button>
-                    </form>
-                </li>
-
-                <li class="navbar-item">
-                    <form method="get" action="/help" class="nav-link">
-                        <button class="b1"><@spring.message 'buttons.help'/></button>
-                    </form>
-                </li>
-                <li class="navbar-item">
-                    <form method="get" action="/logout" class="nav-link">
-                        <button class="b1" type="submit" name="logout" value="Logout" class="nav-link"><@spring.message 'buttons.logout'/></button>
-                    </form>
-                </li>
-
             </ul>
+
         </div>
+
     </div>
 </nav>
-

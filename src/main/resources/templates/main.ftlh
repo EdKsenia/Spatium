@@ -21,7 +21,12 @@
 </head>
 <body>
 <!--шапка-->
-<#include "header.ftlh">
+<#if aut>
+    <#include "header.ftlh">
+
+<#else>
+    <#include "headerNotAut.ftlh">
+</#if>
 <div class="col-md-12">
     <div class="col-md-9 col-md-push-1">
 
@@ -51,7 +56,7 @@
                                 <option value=20>20</option>
                             </select></div>
                         <input type="button" id="send" class="btn" value="search" onclick="f(1)"/>
-                        
+
                     </div>
 
                     <script type="application/javascript">

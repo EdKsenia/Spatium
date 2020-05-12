@@ -18,8 +18,11 @@ public class Video {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @ManyToOne
+    @JoinColumn(name = "channel_id")
     private Channel channel;
+
     private String name;
     private String description;
     private LocalDateTime createdAt;

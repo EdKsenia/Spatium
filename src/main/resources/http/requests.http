@@ -1,5 +1,5 @@
 #GET localhost/search/videos?q=ksus&page=1&size=1
 
-GET localhost:80/main/search?query=be&page=0&size=1
+GET localhost:80/channel/1/information
 
 ###

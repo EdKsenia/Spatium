@@ -15,7 +15,13 @@
 
 </head>
 <body>
-<#include "header.ftlh">
+<#if aut>
+    <#include "header.ftlh">
+
+<#else>
+    <#include "headerNotAut.ftlh">
+</#if>
+
 
 <div class="carousel slide" data-ride="carousel" id="slides">
     <ul class="carousel-indicators">

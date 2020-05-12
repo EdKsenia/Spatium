@@ -4,10 +4,12 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -34,10 +36,17 @@ public class User implements Serializable {
     @Enumerated(value = EnumType.STRING)
     private Role role;
 
-    private  String confirmCode;
+    private String confirmCode;
 
-//    @ManyToOne
+    //    @ManyToOne
 //    @JoinColumn(name = "img")
 //    String img;
+    @OneToOne
+    @JoinColumn(name = "img")
+    FileInfo img;
+
+    @OneToMany(mappedBy = "user")
+    @Where(clause = "createdAt.getMonth() = LocalDateTime.now().getMonth()")
+    private List<HelpMessage> lastMessages;
 
 }

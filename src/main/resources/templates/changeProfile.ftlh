@@ -46,17 +46,21 @@
                     <div class="row" id="info1">Name
 <#--                        <input type="text" name="name" placeholder="Name*" value="${user.name}"><br>-->
                         <@spring.formInput "profileForm.name"/>
+<#--                        ${user.name}-->
                         <@spring.showErrors "<br>"/>
                     </div>
 
-                    <div class="row" id="info">Born
+<#--                    <div class="row" id="info">Born-->
 <#--                        <input type="text" name="born" placeholder="Born*" value="${user.born}"><br>-->
-                        <@spring.formInput "profileForm.born"/>
-                        <@spring.showErrors "<br>","error"/>
-                    </div>
+<#--&lt;#&ndash;                        <@spring.formInput "profileForm.born"/>&ndash;&gt;-->
+<#--&lt;#&ndash;                        ${user.born}&ndash;&gt;-->
+<#--&lt;#&ndash;                        <@spring.showErrors "<br>","error"/>&ndash;&gt;-->
+<#--                    </div>-->
 
                     <div class="row" id="info">About me
                         <@spring.formInput "profileForm.about"/>
+<#--                        ${user.about}-->
+                        <@spring.showErrors "<br>","error"/>
 <#--                        <textarea name="about" placeholder="AboutMe*" rows="4" cols="54"-->
 <#--                                  value="${user.about}"></textarea><br>-->
                     </div>
@@ -67,7 +71,6 @@
 <#--                        <input type="file" name="fileP" value="${img}" required="required">-->
                     </div>
                     <br>
-                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
                     <div class="row" id="submit">
                         <input type="submit" name="saveNote" value="Save">
                     </div>

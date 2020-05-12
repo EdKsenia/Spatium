@@ -3,6 +3,7 @@ package ru.itis.springbootdemo.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.itis.springbootdemo.dto.ChannelDto;
+import ru.itis.springbootdemo.dto.InformationChannelDto;
 import ru.itis.springbootdemo.models.Channel;
 import ru.itis.springbootdemo.repositories.ChannelsRepository;
 
@@ -22,14 +23,25 @@ public class ChannelsServiceImpl implements ChannelsService {
     }
 
     @Override
-    public Channel getConcreteChannel(Long channelId) {
-        Channel channel = channelsRepository.getOne(channelId);
+    public Channel getConcreteChannelByUserId(Long userId) {
+        Channel channel = channelsRepository.findOneByUserId(userId);
+        return channel;
+    }
+
+    @Override
+    public Channel getConcreteChannelByChannelId(Long channelId) {
+        Channel channel = channelsRepository.findOneById(channelId);
         return channel;
     }
 
     @Override
     public List<ChannelDto> search(String name) {
         return null;
+    }
+
+    @Override
+    public InformationChannelDto getInformation(Long channelId) {
+        return channelsRepository.getInformationByChannel(channelId);
     }
 
 //    @Override
