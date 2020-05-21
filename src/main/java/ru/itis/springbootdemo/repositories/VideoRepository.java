@@ -21,8 +21,11 @@ public interface VideoRepository extends JpaRepository<Video, Long> {
 
     @Query("from Video video where " +
         "(upper(video.name) like concat('%', upper(:query), '%') or " +
-        "upper(video.channel.name) like concat ('%', upper(:query), '%') or " +
-        "upper(video.channel.user.email) like concat ('%', upper(:query), '%') or " +
-        "upper(video.channel.user.name) like concat ('%', upper(:query), '%'))")
+        "upper(video.channel.name) like concat ('%', upper(:query), '%'))")
+//        "upper(video.channel.user.email) like concat ('%', upper(:query), '%') or " +
+//        "upper(video.channel.user.name) like concat ('%', upper(:query), '%'))")
     Page<Video> search(@Param("query") String query, Pageable pageable);
+
+    @Query(value = "SELECT * FROM videos ORDER BY ID DESC LIMIT 5", nativeQuery = true)
+    List<Video> findLast5Video();
 }
