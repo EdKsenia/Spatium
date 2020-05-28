@@ -41,12 +41,12 @@ public class User implements Serializable {
     //    @ManyToOne
 //    @JoinColumn(name = "img")
 //    String img;
-    @OneToOne
-    @JoinColumn(name = "img")
-    FileInfo img;
+//    @OneToOne
+//    @JoinColumn(name = "img")
+//    FileInfo img;
 
-    @OneToMany(mappedBy = "user")
-    @Where(clause = "createdAt.getMonth() = LocalDateTime.now().getMonth()")
-    private List<HelpMessage> lastMessages;
+//    @OneToMany(mappedBy = "user")
+//    @Where(clause = "createdAt.getMonth() = LocalDateTime.now().getMonth()")
+//    private List<HelpMessage> lastMessages;
 
 }
